@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tina Draw to Melody</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tina 画图变音乐 Draw to Melody </h1>
+
+        <div class="controls">
+            <div class="color-palette">
+                <span>Color Brushes 画笔颜色:</span>
+                <div class="color-brush active" data-color="#FF0000" style="background-color: #FF0000;" title="Red (Sine Wave)"></div>
+                <div class="color-brush" data-color="#00FF00" style="background-color: #00FF00;" title="Green (Square Wave)"></div>
+                <div class="color-brush" data-color="#0000FF" style="background-color: #0000FF;" title="Blue (Sawtooth Wave)"></div>
+                <div class="color-brush" data-color="#FFFF00" style="background-color: #FFFF00;" title="Yellow (Triangle Wave)"></div>
+                <div class="color-brush" data-color="#000000" style="background-color: #000000;" title="Black (Sine Wave - default)"></div>
+            </div>
+            <div class="brush-size-control">
+                <label for="brushSize">Brush Size 画笔大小:</label>
+                <input type="range" id="brushSize" min="2" max="50" value="5">
+            </div>
+        </div>
+
+        <canvas id="doodleArea"></canvas>
+
+        <div class="action-buttons">
+            <button id="playSoundButton">Turn Drawing into Music 变成音乐</button>
+            <button id="clearButton">Clear 清除绘画</button>
+        </div>
+        <p class="instructions">
+            Draw in the area above. Different colors produce different sound timbres.<br>
+            The horizontal position (left-to-right) determines when a sound plays.<br>
+            The vertical position (top-to-bottom) determines the pitch (higher up = higher pitch).<br>
+            在上方区域绘画，以创建音乐盒旋律。<br>
+            Y轴位置：决定音符在音阶中的音高（位置越高，音高越高）。<br>
+            X轴位置：决定音符何时播放（从左到右，按节奏进行量化）。<br>
+            颜色：选择音高的八度范围（红色：中音区，绿色：高一个八度，蓝色：低一个八度）。<br>
+            画笔大小：影响音量，并略微影响音符的持续时间。
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

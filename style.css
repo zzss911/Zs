@@ -1,0 +1,133 @@
+body {
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for scroll */
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.color-palette {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+}
+
+.color-brush {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-brush:hover {
+    transform: scale(1.1);
+}
+
+.color-brush.active {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.brush-size-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#doodleArea {
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: crosshair;
+    touch-action: none; /* Prevent scrolling on touch devices while drawing */
+    max-width: 100%; /* Make canvas responsive */
+    height: auto;    /* Maintain aspect ratio */
+}
+
+.action-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button#clearButton {
+    background-color: #dc3545;
+}
+
+button#clearButton:hover {
+    background-color: #c82333;
+}
+
+.instructions {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+    /* 添加支持中文的字体 */
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "PingFang SC", sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    .color-palette {
+        justify-content: center;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+    button {
+        width: 100%;
+    }
+}
